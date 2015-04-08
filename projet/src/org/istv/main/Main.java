@@ -18,7 +18,13 @@ public class Main {
 		ic.setVisible(true);
 		
 		JTableEvents jt = new JTableEvents();
+		jt.dataTable();
 		jt.setVisible(true);
+		
+
+		JTableEvents jt2 = new JTableEvents();
+		jt2.stateTable();
+		jt2.setVisible(true);
 	}
 
 }

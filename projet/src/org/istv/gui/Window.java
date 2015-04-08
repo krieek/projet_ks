@@ -46,8 +46,8 @@ public class Window extends JFrame {
 	
 		contentPane.add(lslider);
 		sliderParam = new JSlider(JSlider.VERTICAL);
-		sliderParam.setBounds(108, 15, 23, 209);
-		contentPane.add(lslider);
+		sliderParam.setBounds(50, 55, 53, 59);
+		contentPane.add(sliderParam);
 		
 		
 		
