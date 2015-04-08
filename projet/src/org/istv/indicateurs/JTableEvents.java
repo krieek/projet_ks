@@ -35,10 +35,67 @@ public class JTableEvents extends JFrame {
         	
         	String[] parts = str.split(" ");
         	
-            test1 = parts[0];
-            test2 = parts[1];
-            test3 = parts[2];
-            test4 = parts[3];
+        	switch (parts[0]) {
+			case "0":
+				test1 = "Warning";
+				break;
+			case "50":
+				test1 = "Succes";
+				break;
+			case "100":
+				test1 = "Critical"; 
+				break;				
+			default:
+				test1 = "Other"; 
+				break;
+			}
+        	
+        	switch (parts[1]) {
+			case "0":
+				test2 = "Warning";
+				break;
+			case "50":
+				test2 = "Succes";
+				break;
+			case "100":
+				test2 = "Critical"; 
+				break;				
+			default:
+				test2 = "Other"; 
+				break;
+			}
+        	
+        	switch (parts[2]) {
+			case "0":
+				test3 = "Warning";
+				break;
+			case "50":
+				test3 = "Succes";
+				break;
+			case "100":
+				test3 = "Critical"; 
+				break;				
+			default:
+				test3 = "Other"; 
+				break;
+			}
+
+        	switch (parts[3]) {
+			case "0":
+				test4 = "Warning";
+				break;
+			case "50":
+				test4 = "Succes";
+				break;
+			case "100":
+				test4 = "Critical"; 
+				break;				
+			default:
+				test4 = "Other"; 
+				break;
+			}
+        	
+            //test4 = parts[3];
             
             Vector<String> row = new Vector<String>();
             row.addElement(test1);
@@ -57,7 +114,7 @@ public class JTableEvents extends JFrame {
         columnNames.addElement("Synthèse");
         
         JTable tableau = new JTable(rowData, columnNames);
-        
+
         		
         getContentPane().add(tableau.getTableHeader(), BorderLayout.NORTH);
         getContentPane().add(tableau, BorderLayout.CENTER);
