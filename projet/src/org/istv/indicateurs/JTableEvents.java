@@ -15,15 +15,9 @@ public class JTableEvents extends JFrame {
 	String test3;
 	String test4;
 	
-	Object[] donnee;
-	Object[][] donnees;
-	
-    Vector vecto = new Vector<String>();
 
-    Vector entetes = new Vector<String>();
-    
-    
-    public JTableEvents() {
+    @SuppressWarnings("rawtypes")
+	public JTableEvents() {
         super();
  
         setTitle("Indicateur de criticité");
@@ -35,40 +29,35 @@ public class JTableEvents extends JFrame {
         
         String lines[] = line.split("\n");
 
+        Vector<Vector> rowData = new Vector<Vector>();
         
         for (String str : lines) {
-            test1 = str.substring(0, 2);
-            test2 = str.substring(3, 5);
-            test3 = str.substring(6, 8);
-            test4 = str.substring(9, 11);
-          
+        	
+        	String[] parts = str.split(" ");
+        	
+            test1 = parts[0];
+            test2 = parts[1];
+            test3 = parts[2];
+            test4 = parts[3];
             
+            Vector<String> row = new Vector<String>();
+            row.addElement(test1);
+            row.addElement(test2);
+            row.addElement(test3);
+            row.addElement(test4);
             
-         //   Object[] donnees = {test1, test2, test3, test4, Sport.TENNIS};
-          //  vecto.add(donnees);
-            
-           
-            
-            
+            rowData.addElement(row);
 
 		}
         
-        vecto.add(test1);
-        vecto.add(test2);
-        vecto.add(test3);
-        vecto.add(test4);
- 
-       // Object[] entet = {"Test1", "Test2", "Test3", "Test4", "Sport"};
-        //entetes.add(entet);
+        Vector<String> columnNames = new Vector<String>();
+        columnNames.addElement("Test1");
+        columnNames.addElement("Test2");
+        columnNames.addElement("Test3");
+        columnNames.addElement("Synthèse");
         
+        JTable tableau = new JTable(rowData, columnNames);
         
-        entetes.add("test1");
-        entetes.add("test2");
-        entetes.add("test3");
-        entetes.add("test4");
-        
-        
-        JTable tableau = new JTable(vecto, entetes);
         		
         getContentPane().add(tableau.getTableHeader(), BorderLayout.NORTH);
         getContentPane().add(tableau, BorderLayout.CENTER);
