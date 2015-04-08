@@ -1,10 +1,14 @@
 package org.istv.main;
 
 import org.istv.gui.Window;
+import org.istv.indicateurs.Files;
 import org.istv.indicateurs.IndicIhm;
+import org.istv.indicateurs.JTableEvents;
 
 public class Main {
 
+	public String st;
+	
 	public static void main(String[] args) {
 		
 		//Window window = new Window();
@@ -12,7 +16,9 @@ public class Main {
 		
 		IndicIhm ic = new IndicIhm();		
 		ic.setVisible(true);
-
+		
+		JTableEvents jt = new JTableEvents();
+		jt.setVisible(true);
 	}
 
 }
